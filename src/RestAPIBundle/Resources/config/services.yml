@@ -1,0 +1,12 @@
+parameters:
+    serviceUrl:  http://www.omdbapi.com/
+    apiKey: dfb1f0ae
+
+services:
+    rest_api:
+         class: RestAPIBundle\Service\FilmParserService
+         arguments: ['%serviceUrl%', '%apiKey%', "@doctrine.orm.entity_manager"]
+
+    find_film:
+         class: RestAPIBundle\Service\FilmParserService
+         arguments: ["@doctrine.orm.entity_manager"]
