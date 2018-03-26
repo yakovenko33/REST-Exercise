@@ -7,6 +7,3 @@ services:
          class: RestAPIBundle\Service\FilmParserService
          arguments: ['%serviceUrl%', '%apiKey%', "@doctrine.orm.entity_manager"]
 
-    find_film:
-         class: RestAPIBundle\Service\FilmParserService
-         arguments: ["@doctrine.orm.entity_manager"]

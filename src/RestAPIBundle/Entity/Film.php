@@ -24,30 +24,30 @@ class Film
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=60)
+     * @ORM\Column(name="title", type="string", length=70)
      */
     private $title;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="year", type="string", length=10)
+     * @ORM\Column(name="year", type="integer")
      */
     private $year;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="rated", type="string", length=15)
+     * @ORM\Column(name="rated", type="string", length=30)
      */
     private $rated;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="realeased", type="string", length=20)
+     * @ORM\Column(name="released", type="string", length=50)
      */
-    private $realeased;
+    private $released;
 
     /**
      * @var string
@@ -59,28 +59,28 @@ class Film
     /**
      * @var string
      *
-     * @ORM\Column(name="genre", type="string", length=255)
+     * @ORM\Column(name="genre", type="string", length=200)
      */
     private $genre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="director", type="string", length=60)
+     * @ORM\Column(name="director", type="string", length=120)
      */
     private $director;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="writer", type="string", length=60)
+     * @ORM\Column(name="writer", type="string", length=200)
      */
     private $writer;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="actors", type="string", length=80)
+     * @ORM\Column(name="actors", type="string", length=200)
      */
     private $actors;
 
@@ -94,35 +94,42 @@ class Film
     /**
      * @var string
      *
-     * @ORM\Column(name="langauge", type="string", length=20)
+     * @ORM\Column(name="language", type="string", length=100, nullable=true)
      */
-    private $langauge;
+    private $language;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="country", type="string", length=70)
+     * @ORM\Column(name="country", type="string", length=100, nullable=true)
      */
     private $country;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="awards", type="string", length=80)
+     * @ORM\Column(name="awards", type="string", length=80, nullable=true)
      */
     private $awards;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="poster", type="string", length=255)
+     * @ORM\Column(name="poster", type="string", length=255, nullable=true)
      */
     private $poster;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="metascore", type="integer", nullable=true)
+     */
+    private $metascore;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="imdbRating", type="string", length=10)
+     * @ORM\Column(name="imdbRating", type="string", length=11)
      */
     private $imdbRating;
 
@@ -136,35 +143,35 @@ class Film
     /**
      * @var string
      *
-     * @ORM\Column(name="imdbID", type="string", length=50)
+     * @ORM\Column(name="imdbID", type="string", length=25)
      */
     private $imdbID;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Type", type="string", length=15)
+     * @ORM\Column(name="type", type="string", length=40)
      */
     private $type;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dvd", type="string", length=20)
+     * @ORM\Column(name="dvd", type="string", length=50, nullable=true)
      */
     private $dvd;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="boxoffice", type="string", length=15)
+     * @ORM\Column(name="boxOffice", type="string", length=30)
      */
-    private $boxoffice;
+    private $boxOffice;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="website", type="string", length=50)
+     * @ORM\Column(name="website", type="string", length=80, nullable=true)
      */
     private $website;
 
@@ -205,7 +212,7 @@ class Film
     /**
      * Set year
      *
-     * @param string $year
+     * @param integer $year
      * @return Film
      */
     public function setYear($year)
@@ -218,7 +225,7 @@ class Film
     /**
      * Get year
      *
-     * @return string 
+     * @return integer 
      */
     public function getYear()
     {
@@ -249,26 +256,26 @@ class Film
     }
 
     /**
-     * Set realeased
+     * Set released
      *
-     * @param string $realeased
+     * @param string $released
      * @return Film
      */
-    public function setRealeased($realeased)
+    public function setReleased($released)
     {
-        $this->realeased = $realeased;
+        $this->released = $released;
 
         return $this;
     }
 
     /**
-     * Get realeased
+     * Get released
      *
      * @return string 
      */
-    public function getRealeased()
+    public function getReleased()
     {
-        return $this->realeased;
+        return $this->released;
     }
 
     /**
@@ -410,26 +417,26 @@ class Film
     }
 
     /**
-     * Set langauge
+     * Set language
      *
-     * @param string $langauge
+     * @param string $language
      * @return Film
      */
-    public function setLangauge($langauge)
+    public function setLanguage($language)
     {
-        $this->langauge = $langauge;
+        $this->language = $language;
 
         return $this;
     }
 
     /**
-     * Get langauge
+     * Get language
      *
      * @return string 
      */
-    public function getLangauge()
+    public function getLanguage()
     {
-        return $this->langauge;
+        return $this->language;
     }
 
     /**
@@ -479,9 +486,9 @@ class Film
     }
 
     /**
-     * Set poter
+     * Set poster
      *
-     * @param string $poter
+     * @param string $poster
      * @return Film
      */
     public function setPoster($poster)
@@ -492,13 +499,36 @@ class Film
     }
 
     /**
-     * Get poter
+     * Get poster
      *
      * @return string 
      */
     public function getPoster()
     {
         return $this->poster;
+    }
+
+    /**
+     * Set metascore
+     *
+     * @param integer $metascore
+     * @return Film
+     */
+    public function setMetascore($metascore)
+    {
+        $this->metascore = $metascore;
+
+        return $this;
+    }
+
+    /**
+     * Get metascore
+     *
+     * @return integer 
+     */
+    public function getMetascore()
+    {
+        return $this->metascore;
     }
 
     /**
@@ -617,26 +647,26 @@ class Film
     }
 
     /**
-     * Set boxoffice
+     * Set boxOffice
      *
-     * @param string $boxoffice
+     * @param string $boxOffice
      * @return Film
      */
-    public function setBoxoffice($boxoffice)
+    public function setBoxOffice($boxOffice)
     {
-        $this->boxoffice = $boxoffice;
+        $this->boxOffice = $boxOffice;
 
         return $this;
     }
 
     /**
-     * Get boxoffice
+     * Get boxOffice
      *
      * @return string 
      */
-    public function getBoxoffice()
+    public function getBoxOffice()
     {
-        return $this->boxoffice;
+        return $this->boxOffice;
     }
 
     /**
